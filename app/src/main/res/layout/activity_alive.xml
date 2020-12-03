@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AliveActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/TextViewSubTitleStyle"
+                android:text="MutableLiveData.observer：" />
+
+            <TextView
+                android:id="@+id/tv_mutableObserver"
+                style="@style/TextViewTitleStyle"
+                tools:text="100" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/TextViewSubTitleStyle"
+                android:text="EventLiveData.observe：" />
+
+            <TextView
+                android:id="@+id/tv_eventObserveAlive"
+                style="@style/TextViewTitleStyle"
+                tools:text="100" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/TextViewSubTitleStyle"
+                android:text="EventLiveData.observeSticky：" />
+
+            <TextView
+                android:id="@+id/tv_eventLiveAliveSticky"
+                style="@style/TextViewTitleStyle"
+                tools:text="100" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_setValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="setValue"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_postValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="postValue"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_setValueOtherPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="到其它页面 setValue"
+            android:textAllCaps="false" />
+
+        <TextView
+            style="@style/TextViewSubTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="setValue/postValue 后退出 Activity，重新打开页面" />
+
+    </LinearLayout>
+
+</ScrollView>
