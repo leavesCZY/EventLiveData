@@ -15,4 +15,4 @@
 	}
 ```
 
-更多介绍请看这里：[Jetpack LiveData的设计理念及改进](https://juejin.cn/post/6903096576734920717)
+更多介绍请看这里：[Jetpack LiveData的设计理念及改进](https://github.com/leavesC/EventLiveData/wiki)
