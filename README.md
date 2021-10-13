@@ -4,15 +4,15 @@
 
 ## Download
 ```groovy
-	allprojects {
-		repositories {
-			maven { url 'https://jitpack.io' }
-		}
-	}
-	
-	dependencies {
-	    implementation 'com.github.leavesC:EventLiveData:1.0.0'
-	}
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+
+dependencies {
+    implementation 'com.github.leavesC:EventLiveData:1.0.0'
+}
 ```
 
-更多介绍请看这里：[Jetpack LiveData的设计理念及改进](https://juejin.cn/post/6903096576734920717/)
+更多介绍请看这里：[Jetpack LiveData 的设计理念及改进](https://juejin.cn/post/6903096576734920717/)

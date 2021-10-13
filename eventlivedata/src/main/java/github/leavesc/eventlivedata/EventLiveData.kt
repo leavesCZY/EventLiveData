@@ -1,6 +1,8 @@
 package github.leavesc.eventlivedata
 
+import android.annotation.SuppressLint
 import androidx.annotation.MainThread
+import androidx.arch.core.internal.SafeIterableMap
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
@@ -30,7 +32,8 @@ open class EventLiveData<Data> {
     /* synthetic access */
     private val mDataLock = Any()
 
-    private val mObservers = EventSafeIterableMap<Observer<Data>, ObserverWrapper<Data>>()
+    @SuppressLint("RestrictedApi")
+    private val mObservers = SafeIterableMap<Observer<Data>, ObserverWrapper<Data>>()
 
     // how many observers are in active state
     internal var mActiveCount = 0
@@ -98,6 +101,7 @@ open class EventLiveData<Data> {
     }
 
     /* synthetic access */
+    @SuppressLint("RestrictedApi")
     internal fun dispatchingValue(observerWrapper: ObserverWrapper<Data>?) {
         var initiator: ObserverWrapper<Data>? = observerWrapper
         if (mDispatchingValue) {
@@ -200,6 +204,7 @@ open class EventLiveData<Data> {
         )
     }
 
+    @SuppressLint("RestrictedApi")
     private fun observeLifecycleObserver(
         funName: String,
         owner: LifecycleOwner,
@@ -231,6 +236,7 @@ open class EventLiveData<Data> {
         owner.lifecycle.addObserver(wrapper)
     }
 
+    @SuppressLint("RestrictedApi")
     private fun observeAlwaysActiveObserver(
         funName: String,
         observer: Observer<Data>,
@@ -259,6 +265,7 @@ open class EventLiveData<Data> {
      * @param observer The Observer to receive events.
      */
     @MainThread
+    @SuppressLint("RestrictedApi")
     fun removeObserver(observer: Observer<Data>) {
         assertMainThread(
             "removeObserver"
@@ -385,6 +392,7 @@ open class EventLiveData<Data> {
      *
      * @return true if this LiveData has observers
      */
+    @SuppressLint("RestrictedApi")
     fun hasObservers(): Boolean {
         return mObservers.size() > 0
     }
