@@ -8,7 +8,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/CZY/Desktop/EventLiveData/app/src/main/res/layout/activity_alive.xml" value="0.2046875" />
+        <entry key="..\:/Users/CZY/Desktop/EventLiveData/app/src/main/res/layout/activity_alive.xml" value="0.25" />
+        <entry key="..\:/Users/CZY/Desktop/EventLiveData/app/src/main/res/layout/activity_alive2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/CZY/Desktop/EventLiveData/app/src/main/res/layout/activity_main.xml" value="0.3605128205128205" />
+        <entry key="..\:/Users/CZY/Desktop/EventLiveData/app/src/main/res/layout/activity_sticky.xml" value="0.25" />
       </map>
     </option>
   </component>

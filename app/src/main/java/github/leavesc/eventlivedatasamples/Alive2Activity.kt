@@ -20,7 +20,7 @@ class Alive2Activity : AppCompatActivity() {
         btn_setValue.setOnClickListener {
             val newValue = Random.nextInt(1, 300).toString()
             AliveActivity.mutableLiveData.value = newValue
-            AliveActivity.eventLiveData.setValue(newValue)
+            AliveActivity.eventLiveData.value = newValue
         }
         btn_postValue.setOnClickListener {
             thread {

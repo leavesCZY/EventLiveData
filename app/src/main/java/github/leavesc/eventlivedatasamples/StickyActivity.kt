@@ -3,7 +3,6 @@ package github.leavesc.eventlivedatasamples
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import github.leavesc.eventlivedata.EventLiveData
 import kotlinx.android.synthetic.main.activity_sticky.*
 import kotlin.concurrent.thread
@@ -28,19 +27,19 @@ class StickyActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sticky)
-        mutableLiveData.observe(this, Observer {
+        mutableLiveData.observe(this, {
             tv_mutableObserver.text = it
         })
-        eventLiveData.observe(this, Observer {
+        eventLiveData.observe(this, {
             tv_eventObserve.text = it
         })
-        eventLiveData.observeSticky(this, Observer {
+        eventLiveData.observeSticky(this, {
             tv_eventObserveSticky.text = it
         })
         btn_setValue.setOnClickListener {
             val newValue = Random.nextInt(1, 300).toString()
             mutableLiveData.value = newValue
-            eventLiveData.setValue(newValue)
+            eventLiveData.value = newValue
         }
         btn_postValue.setOnClickListener {
             thread {

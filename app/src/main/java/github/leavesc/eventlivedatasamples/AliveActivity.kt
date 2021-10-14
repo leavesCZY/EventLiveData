@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import github.leavesc.eventlivedata.EventLiveData
 import kotlinx.android.synthetic.main.activity_alive.*
 import kotlin.concurrent.thread
@@ -30,22 +29,22 @@ class AliveActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alive)
-        mutableLiveData.observe(this, Observer {
+        mutableLiveData.observe(this, {
             showToast("MutableLiveData observe 收到消息了: $it")
             tv_mutableObserver.text = it
         })
-        eventLiveData.observe(this, Observer {
+        eventLiveData.observe(this, {
             showToast("EventLiveData observe 收到消息了: $it")
             tv_eventObserveAlive.text = it
         }, false)
-        eventLiveData.observeSticky(this, Observer {
+        eventLiveData.observeSticky(this, {
             showToast("EventLiveData observeSticky 收到消息了: $it")
             tv_eventLiveAliveSticky.text = it
         }, false)
         btn_setValue.setOnClickListener {
             val newValue = Random.nextInt(1, 300).toString()
             mutableLiveData.value = newValue
-            eventLiveData.setValue(newValue)
+            eventLiveData.value = newValue
         }
         btn_postValue.setOnClickListener {
             thread {
