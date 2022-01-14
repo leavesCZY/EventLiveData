@@ -11,7 +11,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.leavesC:EventLiveData:1.0.1'
+    implementation 'com.github.leavesCZY:EventLiveData:1.0.2'
 }
 ```
 
