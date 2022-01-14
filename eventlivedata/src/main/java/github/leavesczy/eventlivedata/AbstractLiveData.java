@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package github.leavesc.eventlivedata;
+package github.leavesczy.eventlivedata;
 
 import static androidx.lifecycle.Lifecycle.State.CREATED;
 import static androidx.lifecycle.Lifecycle.State.DESTROYED;

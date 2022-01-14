@@ -1,18 +1,18 @@
-package github.leavesc.eventlivedatasamples
+package github.leavesczy.eventlivedatasamples
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import github.leavesc.eventlivedata.EventLiveData
+import github.leavesczy.eventlivedata.EventLiveData
 import kotlinx.android.synthetic.main.activity_sticky.*
 import kotlin.concurrent.thread
 import kotlin.random.Random
 
 /**
- * @Author: leavesC
+ * @Author: leavesCZY
  * @Date: 2020/7/11 14:35
  * @Desc: 解决黏性事件问题
- * GitHub：https://github.com/leavesC
+ * @GitHub：https://github.com/leavesCZY
  */
 class StickyActivity : AppCompatActivity() {
 

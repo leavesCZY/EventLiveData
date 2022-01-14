@@ -1,4 +1,4 @@
-package github.leavesc.eventlivedatasamples
+package github.leavesczy.eventlivedatasamples
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

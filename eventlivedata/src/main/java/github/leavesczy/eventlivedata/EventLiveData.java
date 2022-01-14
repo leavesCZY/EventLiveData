@@ -1,10 +1,10 @@
-package github.leavesc.eventlivedata;
+package github.leavesczy.eventlivedata;
 
 /**
- * @Author: leavesC
+ * @Author: leavesCZY
  * @Date: 2021/10/14 13:27
  * @Desc:
- * @Github：https://github.com/leavesC
+ * @Github：https://github.com/leavesCZY
  */
 public class EventLiveData<T> extends AbstractLiveData<T> {
 

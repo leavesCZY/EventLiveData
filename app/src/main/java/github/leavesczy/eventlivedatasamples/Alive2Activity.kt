@@ -1,4 +1,4 @@
-package github.leavesc.eventlivedatasamples
+package github.leavesczy.eventlivedatasamples
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,10 @@ import kotlin.concurrent.thread
 import kotlin.random.Random
 
 /**
- * @Author: leavesC
+ * @Author: leavesCZY
  * @Date: 2020/7/11 17:55
  * @Desc:
- * GitHub：https://github.com/leavesC
+ * @GitHub：https://github.com/leavesCZY
  */
 class Alive2Activity : AppCompatActivity() {
 

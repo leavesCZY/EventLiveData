@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "github.leavesc.eventlivedatasamples"
+        applicationId "github.leavesczy.eventlivedatasamples"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1

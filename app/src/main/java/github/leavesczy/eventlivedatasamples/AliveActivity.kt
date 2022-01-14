@@ -1,20 +1,20 @@
-package github.leavesc.eventlivedatasamples
+package github.leavesczy.eventlivedatasamples
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import github.leavesc.eventlivedata.EventLiveData
+import github.leavesczy.eventlivedata.EventLiveData
 import kotlinx.android.synthetic.main.activity_alive.*
 import kotlin.concurrent.thread
 import kotlin.random.Random
 
 /**
- * @Author: leavesC
+ * @Author: leavesCZY
  * @Date: 2020/7/11 17:55
  * @Desc: 扩大 Observer 的生命周期
- * GitHub：https://github.com/leavesC
+ * @GitHub：https://github.com/leavesCZY
  */
 class AliveActivity : AppCompatActivity() {
 
