@@ -1,4 +1,4 @@
-# EventLiveData  [![](https://jitpack.io/v/leavesC/EventLiveData.svg)](https://jitpack.io/#leavesC/EventLiveData)
+# EventLiveData  [![](https://jitpack.io/v/leavesCZY/EventLiveData.svg)](https://jitpack.io/#leavesCZY/EventLiveData)
 
 对 Jetpack LiveData 进行功能扩展，解决黏性事件及通知延迟问题
 
