@@ -4,23 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".StickyActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <TextView
-            style="@style/TextViewSubTitleStyle"
-            android:text="MutableLiveData.observer：" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="MutableLiveData.observer"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_mutableObserver"
-            style="@style/TextViewTitleStyle"
+            android:id="@+id/tvMutableObserver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
             tools:text="100" />
 
     </LinearLayout>
@@ -29,16 +35,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <TextView
-            style="@style/TextViewSubTitleStyle"
-            android:text="EventLiveData.observe：" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="EventLiveData.observe"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_eventObserve"
-            style="@style/TextViewTitleStyle"
+            android:id="@+id/tvEventObserve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
             tools:text="100" />
 
     </LinearLayout>
@@ -46,40 +59,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
-            style="@style/TextViewSubTitleStyle"
-            android:text="EventLiveData.observeSticky：" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="EventLiveData.observeSticky"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_eventObserveSticky"
-            style="@style/TextViewTitleStyle"
+            android:id="@+id/tvEventObserveSticky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
             tools:text="100" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_setValue"
+        android:id="@+id/btnSetValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:text="setValue"
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/btn_postValue"
+        android:id="@+id/btnPostValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:text="postValue"
         android:textAllCaps="false" />
 
     <TextView
-        style="@style/TextViewSubTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="setValue/postValue 后退出 Activity，重新打开页面" />
+        android:layout_margin="20dp"
+        android:text="setValue/postValue 后退出 Activity，重新打开页面"
+        android:textAllCaps="false"
+        android:textSize="18sp" />
 
 </LinearLayout>

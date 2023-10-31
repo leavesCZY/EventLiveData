@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".Alive2Activity">
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_setValue"
+        android:id="@+id/btnSetValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:text="setValue"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +18,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_postValue"
+        android:id="@+id/btnPostValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:text="postValue"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
