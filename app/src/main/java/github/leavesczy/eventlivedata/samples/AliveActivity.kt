@@ -40,14 +40,14 @@ class AliveActivity : AppCompatActivity() {
             showToast("MutableLiveData observe 收到消息了: $it")
             tvMutableObserver.text = it
         }
-        eventLiveData.observe(this, {
+        eventLiveData.observe(this, false) {
             showToast("EventLiveData observe 收到消息了: $it")
             tvEventObserveAlive.text = it
-        }, false)
-        eventLiveData.observeSticky(this, {
+        }
+        eventLiveData.observeSticky(this, false) {
             showToast("EventLiveData observeSticky 收到消息了: $it")
             tvEventLiveALiveSticky.text = it
-        }, false)
+        }
         btnSetValue.setOnClickListener {
             val newValue = Random.nextInt(1, 300).toString()
             mutableLiveData.value = newValue

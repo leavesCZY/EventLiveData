@@ -177,7 +177,7 @@ public abstract class AbstractLiveData<T> {
      */
     @MainThread
     @SuppressLint("RestrictedApi")
-    private void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super T> observer, boolean isLifecycleIntensive, boolean sticky) {
+    private void observe(@NonNull LifecycleOwner owner, boolean isLifecycleIntensive, boolean sticky, @NonNull Observer<? super T> observer) {
         assertMainThread("observe");
         if (owner.getLifecycle().getCurrentState() == DESTROYED) {
             // ignore
@@ -205,7 +205,7 @@ public abstract class AbstractLiveData<T> {
      */
     @MainThread
     public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super T> observer) {
-        observe(owner, observer, true, false);
+        observe(owner, true, false, observer);
     }
 
     /**
@@ -217,8 +217,8 @@ public abstract class AbstractLiveData<T> {
      *                             为 false 时，在 onCreate 之后和 onDestroy 之前均能收到 Observer 回调
      */
     @MainThread
-    public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super T> observer, boolean isLifecycleIntensive) {
-        observe(owner, observer, isLifecycleIntensive, false);
+    public void observe(@NonNull LifecycleOwner owner, boolean isLifecycleIntensive, @NonNull Observer<? super T> observer) {
+        observe(owner, isLifecycleIntensive, false, observer);
     }
 
     /**
@@ -230,7 +230,7 @@ public abstract class AbstractLiveData<T> {
      */
     @MainThread
     public void observeSticky(@NonNull LifecycleOwner owner, @NonNull Observer<? super T> observer) {
-        observe(owner, observer, true, true);
+        observe(owner, true, true, observer);
     }
 
     /**
@@ -242,8 +242,8 @@ public abstract class AbstractLiveData<T> {
      *                             为 false 时，在 onCreate 之后和 onDestroy 之前均能收到 Observer 回调
      */
     @MainThread
-    public void observeSticky(@NonNull LifecycleOwner owner, @NonNull Observer<? super T> observer, boolean isLifecycleIntensive) {
-        observe(owner, observer, isLifecycleIntensive, true);
+    public void observeSticky(@NonNull LifecycleOwner owner, boolean isLifecycleIntensive, @NonNull Observer<? super T> observer) {
+        observe(owner, isLifecycleIntensive, true, observer);
     }
 
     @MainThread

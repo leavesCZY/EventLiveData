@@ -30,6 +30,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.lifecycle:lifecycle-livedata:2.6.2")
-//    implementation(project(":livedata"))
-    implementation("io.github.leavesczy:event-livedata:1.0.3")
+    implementation(project(":livedata"))
+//    implementation("io.github.leavesczy:event-livedata:1.0.4")
 }
