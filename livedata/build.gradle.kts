@@ -7,16 +7,16 @@ plugins {
 
 android {
     namespace = "github.leavesczy.eventlivedata"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 16
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     publishing {
         singleVariant("release") {
@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    compileOnly("androidx.lifecycle:lifecycle-livedata:2.6.2")
+    compileOnly("androidx.lifecycle:lifecycle-livedata:2.8.7")
 }
 
 val signingKeyId = properties["signing.keyId"]?.toString()

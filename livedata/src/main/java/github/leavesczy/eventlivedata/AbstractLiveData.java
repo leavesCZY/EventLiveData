@@ -64,12 +64,11 @@ import java.util.Map;
  * @see ViewModel
  */
 public abstract class AbstractLiveData<T> {
-    @SuppressWarnings("WeakerAccess") /* synthetic access */
-    final Object mDataLock = new Object();
     static final int START_VERSION = -1;
     @SuppressWarnings("WeakerAccess") /* synthetic access */
     static final Object NOT_SET = new Object();
-
+    @SuppressWarnings("WeakerAccess") /* synthetic access */
+    final Object mDataLock = new Object();
     @SuppressLint("RestrictedApi")
     private final SafeIterableMap<Observer<? super T>, ObserverWrapper> mObservers =
             new SafeIterableMap<>();
@@ -77,13 +76,13 @@ public abstract class AbstractLiveData<T> {
     // how many observers are in active state
     @SuppressWarnings("WeakerAccess") /* synthetic access */
             int mActiveCount = 0;
-    // to handle active/inactive reentry, we guard with this boolean
-    private boolean mChangingActiveState;
-    private volatile Object mData;
     // when setData is called, we set the pending data and actual data swap happens on the main
     // thread
     @SuppressWarnings("WeakerAccess") /* synthetic access */
     volatile Object mPendingData = NOT_SET;
+    // to handle active/inactive reentry, we guard with this boolean
+    private boolean mChangingActiveState;
+    private volatile Object mData;
     private int mVersion;
 
     private boolean mDispatchingValue;
@@ -118,6 +117,14 @@ public abstract class AbstractLiveData<T> {
     public AbstractLiveData() {
         mData = NOT_SET;
         mVersion = START_VERSION;
+    }
+
+    @SuppressLint("RestrictedApi")
+    static void assertMainThread(String methodName) {
+        if (!ArchTaskExecutor.getInstance().isMainThread()) {
+            throw new IllegalStateException("Cannot invoke " + methodName + " on a background"
+                    + " thread");
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -353,22 +360,6 @@ public abstract class AbstractLiveData<T> {
     }
 
     /**
-     * Sets the value. If there are active observers, the value will be dispatched to them.
-     * <p>
-     * This method must be called from the main thread. If you need set a value from a background
-     * thread, you can use {@link #postValue(Object)}
-     *
-     * @param value The new value
-     */
-    @MainThread
-    protected void setValue(T value) {
-        assertMainThread("setValue");
-        mVersion++;
-        mData = value;
-        dispatchingValue(null);
-    }
-
-    /**
      * Returns the current value.
      * Note that calling this method on a background thread does not guarantee that the latest
      * value set will be received.
@@ -383,6 +374,22 @@ public abstract class AbstractLiveData<T> {
             return (T) data;
         }
         return null;
+    }
+
+    /**
+     * Sets the value. If there are active observers, the value will be dispatched to them.
+     * <p>
+     * This method must be called from the main thread. If you need set a value from a background
+     * thread, you can use {@link #postValue(Object)}
+     *
+     * @param value The new value
+     */
+    @MainThread
+    protected void setValue(T value) {
+        assertMainThread("setValue");
+        mVersion++;
+        mData = value;
+        dispatchingValue(null);
     }
 
     int getVersion() {
@@ -553,14 +560,6 @@ public abstract class AbstractLiveData<T> {
         @Override
         boolean shouldBeActive() {
             return true;
-        }
-    }
-
-    @SuppressLint("RestrictedApi")
-    static void assertMainThread(String methodName) {
-        if (!ArchTaskExecutor.getInstance().isMainThread()) {
-            throw new IllegalStateException("Cannot invoke " + methodName + " on a background"
-                    + " thread");
         }
     }
 }
