@@ -49,7 +49,7 @@ if (signingKeyId != null
             create<MavenPublication>("release") {
                 groupId = "io.github.leavesczy"
                 artifactId = "event-livedata"
-                version = "1.0.4"
+                version = "1.0.5"
                 afterEvaluate {
                     from(components["release"])
                 }
